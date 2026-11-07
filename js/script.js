@@ -7,6 +7,31 @@ document.addEventListener('DOMContentLoaded', function () {
   // =====================================
   const BEST_WHATSAPP = '6285210777109';
 
+  // =====================================
+// EMAIL RESMI BEST
+// =====================================
+const emailCompany = document.getElementById('emailCompany');
+
+if (emailCompany) {
+  emailCompany.addEventListener('click', function (event) {
+    const isAndroid = /Android/i.test(navigator.userAgent);
+
+    if (isAndroid) {
+      event.preventDefault();
+
+      const email = 'berkahelektromediksejahtera@gmail.com';
+
+      window.location.href =
+        'intent://compose?to=' + encodeURIComponent(email) +
+        '#Intent;' +
+        'scheme=mailto;' +
+        'package=com.google.android.gm;' +
+        'action=android.intent.action.SENDTO;' +
+        'end';
+    }
+  });
+}
+
 
   // =====================================
   // MENU MOBILE
@@ -282,5 +307,5 @@ updateActiveNavigationOnScroll();
       }
     });
   }
-
+  
 });
